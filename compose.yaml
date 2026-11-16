@@ -1,0 +1,22 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: kickoff-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: kickoff
+      MYSQL_USER: kickoff
+      MYSQL_PASSWORD: kickoff
+      MYSQL_ROOT_PASSWORD: local-root-password
+    ports:
+      - "3306:3306"
+    volumes:
+      - kickoff_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "kickoff", "-pkickoff"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  kickoff_mysql_data:
