@@ -4,3 +4,4 @@ server/target/
 .env
 .env.*
 !.env.example
+.vercel
