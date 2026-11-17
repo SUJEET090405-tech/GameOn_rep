@@ -9,7 +9,7 @@ services:
       MYSQL_PASSWORD: kickoff
       MYSQL_ROOT_PASSWORD: local-root-password
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - kickoff_mysql_data:/var/lib/mysql
     healthcheck:

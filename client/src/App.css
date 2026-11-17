@@ -32,7 +32,7 @@
 .hero-social-proof strong { color: #40443a; font-size: 11px; font-weight: 600; }
 .hero-art { position: relative; min-height: 390px; height: 100%; overflow: hidden; border-radius: 7px; background: #526444; }
 .hero-photo, .hero-photo-wash { position: absolute; inset: 0; }
-.hero-photo { background: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1400&q=85') center 53% / cover no-repeat; transform: scale(1.01); }
+.hero-photo { background: url('/venue-placeholder.svg') center / cover no-repeat; transform: scale(1.01); }
 .hero-photo-wash { background: linear-gradient(90deg, #10211822 0%, #10211804 54%, #11201c20 100%), linear-gradient(0deg, #14221b51, transparent 38%); }
 .pitch-line { position: absolute; background: #ffffff9b; opacity: .8; }
 .pitch-center { top: 0; bottom: 0; left: 50%; width: 1px; }
@@ -66,6 +66,15 @@
 .trust-row i { color: #a2b17b; font-size: 9px; font-style: normal; font-weight: 600; }
 .trust-row b { color: #a3bf63; font-size: 13px; font-weight: 400; }
 
+.sport-browser { padding: 43px 0 16px; }
+.sport-browser-heading .eyebrow { display: block; margin-bottom: 9px; }
+.sport-browser-heading h2 { margin: 0; font: 700 30px/1.15 var(--display); letter-spacing: -1.5px; }
+.sport-browser-heading h2 span { color: #88a932; }
+.sport-filter { display: flex; gap: 9px; overflow-x: auto; margin-top: 20px; padding: 2px 1px 8px; }
+.sport-filter-button { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 9px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 22px; color: #676d60; background: white; font-size: 10px; font-weight: 600; transition: background .2s, border-color .2s, color .2s; }
+.sport-filter-button:hover, .sport-filter-button.is-active { border-color: #b7ca89; color: #405323; background: #f2f6e9; }
+.sport-filter-button > span { min-width: 17px; padding: 2px 5px; border-radius: 10px; color: #777d6d; background: #eff1e9; text-align: center; font-size: 9px; }
+.sport-filter-button.is-active > span { color: #405323; background: #e2edca; }
 .turf-section { padding: 79px 0 86px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 29px; }
 .section-heading .eyebrow { display: block; margin-bottom: 12px; }
@@ -107,6 +116,7 @@
 .how-step > span { color: #95a774; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
 .how-step h3 { margin: 13px 0 7px; font: 700 14px var(--display); }
 .how-step p { max-width: 190px; color: #868a80; font-size: 10px; line-height: 1.8; }
+.how-cta { grid-column: 2 / -1; width: fit-content; padding: 0 18px; }
 .site-footer { display: flex; justify-content: space-between; align-items: center; min-height: 91px; }
 .site-footer .brand { font-size: 20px; }
 .site-footer .brand-mark { width: 30px; height: 30px; }
@@ -195,6 +205,10 @@
   .trust-row span { gap: 5px; }
   .trust-row i { font-size: 8px; }
   .trust-row b { font-size: 10px; }
+  .sport-browser { padding: 34px 0 13px; }
+  .sport-browser-heading h2 { font-size: 26px; }
+  .sport-filter { gap: 7px; margin-top: 15px; }
+  .sport-filter-button { gap: 6px; padding: 8px 11px; font-size: 9px; }
   .turf-section { padding: 59px 0 60px; }
   .section-heading { align-items: end; margin-bottom: 20px; }
   .section-heading h2 { font-size: 34px; letter-spacing: -1.8px; }

@@ -1,6 +1,6 @@
-# Gameon turf booking
+# Gameon sports venue booking
 
-A React and Spring Boot application for Gameon: find local football turfs, reserve a slot, discover and register teams for tournaments, and publish fixtures, live scores, and results. Data is stored in MySQL.
+A React and Spring Boot application for Gameon: find venues for football, cricket, badminton, basketball, tennis, volleyball, and pickleball; reserve a slot; discover and register teams for tournaments; and publish fixtures, live scores, and results. Data is stored in MySQL.
 
 ## Requirements
 
@@ -25,6 +25,8 @@ A React and Spring Boot application for Gameon: find local football turfs, reser
    docker compose up -d db
    ```
 
+   The included Compose service exposes MySQL on host port `3307` to avoid conflicts with a local MySQL installation. The API's default local JDBC URL uses that port.
+
 2. In a terminal, start the API with the matching database:
 
    ```powershell
@@ -36,7 +38,7 @@ A React and Spring Boot application for Gameon: find local football turfs, reser
    mvn spring-boot:run
    ```
 
-   The API creates the schema and sample turf and tournament records on its first start. Default local database settings are in `server/src/main/resources/application.properties`; override them with `DB_URL`, `DB_USERNAME`, and `DB_PASSWORD` as needed. Set `ORGANIZER_API_KEY` to a private value before using organizer tools; the built-in fallback is for local development only.
+   The API creates the schema and sample turf and tournament records on its first start. It also adds the user-provided Smashbounce badminton venue if that venue is not already in the database. Default local database settings are in `server/src/main/resources/application.properties`; override them with `DB_URL`, `DB_USERNAME`, and `DB_PASSWORD` as needed. Set `ORGANIZER_API_KEY` to a private value before using organizer tools; the built-in fallback is for local development only.
 
 3. In another terminal, install frontend dependencies and start the web app:
 
@@ -49,6 +51,14 @@ A React and Spring Boot application for Gameon: find local football turfs, reser
 4. Open the Vite URL shown in the terminal (normally `http://localhost:5173`).
 
 The Vite development server proxies `/api` requests to `http://localhost:8080`.
+
+## Frontend pages
+
+- `/` — home
+- `/turfs` — browse sports and search venues
+- `/turfs/football`, `/turfs/cricket`, and other sport paths — sport-specific venue listings
+- `/tournaments` — browse and manage tournaments
+- `/how-it-works` — booking steps
 
 ## Vercel and GitHub
 
@@ -104,4 +114,4 @@ Example booking:
 }
 ```
 
-The sample turfs and images are demo content. Replace them with your venue details before launch. The compose database credentials are for local development only.
+The bundled football turfs are sample content. Verify venue details and replace demo records before launch. The Smashbounce listing was supplied by the user; its unprovided rating is shown as new. The compose database credentials are for local development only.
